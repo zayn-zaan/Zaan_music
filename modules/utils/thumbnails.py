@@ -13,24 +13,6 @@ from youtubesearchpython.__future__ import VideosSearch
 from modules.config import MUSIC_BOT_NAME, YOUTUBE_IMG_URL
 
 
-themes = [
-    "bgreen",
-    "blue",
-    "colorfull",
-    "dgreen",
-    "hgreen",
-    "lgreen",
-    "lyellow",
-    "orange",
-    "pink",
-    "purple",
-    "rainbow",
-    "red",
-    "sky",
-    "thumbnail",
-    "yellow",
-]
-
 def changeImageSize(maxWidth, maxHeight, image):
     widthRatio = maxWidth / image.size[0]
     heightRatio = maxHeight / image.size[1]
@@ -77,9 +59,8 @@ async def gen_thumb(videoid):
                     await f.write(await resp.read())
                     await f.close()
 
-        images = random.choice(themes)
         image1 = Image.open(f"cache/thumb{videoid}.png")
-        image2 = Image.open(f"resource/{images}.png")
+        image2 = Image.open(f"resource/thumbnail.png")
         image3 = changeImageSize(1280, 720, image1)
         image4 = changeImageSize(1280, 720, image2)
         image5 = image3.convert("RGBA")
@@ -91,7 +72,7 @@ async def gen_thumb(videoid):
         draw.text((190, 550), f"Title: {title[:50]} ...", (255, 255, 255), font=font)
         draw.text((190, 590), f"Duration: {duration}", (255, 255, 255), font=font)
         draw.text((190, 630), f"Views: {views}", (255, 255, 255), font=font)
-        draw.text((190, 670), f"Powered By: Aditya Halder (@AdityaHalder)", (255, 255, 255), font=font)
+        draw.text((190, 670), f"Powered By: Yamraj'xD (@its_sanki_owner)", (255, 255, 255), font=font)
         try:
             os.remove(f"cache/thumb{videoid}.png")
             os.remove(f"cache/temp.png")
