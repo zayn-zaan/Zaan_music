@@ -190,7 +190,7 @@ async def start_comm(client, message: Message, _):
         if config.START_IMG_URL:
             try:
                 await message.reply_photo(
-        photo=f"https://te.legra.ph/file/330cfa440fc1dea226479.jpg",
+        photo=f"https://te.legra.ph/file/5723a42566e7da8b6e6c9.jpg",
         caption=f"""**━━━━━━━━━━━━━━━━━━━━━━━━
 💥 𝐇𝐞𝐥𝐥𝐨, 𝐈 𝐚𝐦 𝐒𝐮𝐩𝐞𝐫𝐟𝐚𝐬𝐭 𝐇𝐢𝐠𝐡 𝐐𝐮𝐚𝐥𝐢𝐭𝐲
 𝐍𝐨 𝐋𝐚𝐠 𝐕𝐂 𝐌𝐮𝐬𝐢𝐜 𝐏𝐥𝐚𝐲𝐞𝐫 𝐁𝐨𝐭.
@@ -219,7 +219,7 @@ async def start_comm(client, message: Message, _):
                   )
             except:
                 await message.reply_photo(
-        photo=f"https://te.legra.ph/file/330cfa440fc1dea226479.jpg",
+        photo=f"https://te.legra.ph/file/5723a42566e7da8b6e6c9.jpg",
         caption=f"""**━━━━━━━━━━━━━━━━━━━━━━━━
 💥 𝐇𝐞𝐥𝐥𝐨, 𝐈 𝐚𝐦 𝐒𝐮𝐩𝐞𝐫𝐟𝐚𝐬𝐭 𝐇𝐢𝐠𝐡 𝐐𝐮𝐚𝐥𝐢𝐭𝐲
 𝐍𝐨 𝐋𝐚𝐠 𝐕𝐂 𝐌𝐮𝐬𝐢𝐜 𝐏𝐥𝐚𝐲𝐞𝐫 𝐁𝐨𝐭.
@@ -248,7 +248,7 @@ async def start_comm(client, message: Message, _):
               )
         else:
             await message.reply_photo(
-        photo=f"https://te.legra.ph/file/330cfa440fc1dea226479.jpg",
+        photo=f"https://te.legra.ph/file/5723a42566e7da8b6e6c9.jpg",
         caption=f"""**━━━━━━━━━━━━━━━━━━━━━━━━
 💥 𝐇𝐞𝐥𝐥𝐨, 𝐈 𝐚𝐦 𝐒𝐮𝐩𝐞𝐫𝐟𝐚𝐬𝐭 𝐇𝐢𝐠𝐡 𝐐𝐮𝐚𝐥𝐢𝐭𝐲
 𝐍𝐨 𝐋𝐚𝐠 𝐕𝐂 𝐌𝐮𝐬𝐢𝐜 𝐏𝐥𝐚𝐲𝐞𝐫 𝐁𝐨𝐭.
