@@ -16,10 +16,9 @@ pyrogram==1.4.16
 python-dotenv
 pyyaml==5.3.1
 requests
+speedtest-cli
 spotipy
 tgcrypto
-wget
-git+https://github.com/adityacheats/speedo@master
-git+https://github.com/adityacheats/downloader@master
-git+https://github.com/adityacheats/aditya_search@master
-git+https://github.com/adityacheats/aditya-search-python@main
+youtube-search
+youtube-search-python
+yt-dlp
