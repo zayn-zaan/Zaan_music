@@ -1,6 +1,6 @@
 API_ID=4906250
 API_HASH=0ce8e2006b20d73d5582a894acf26b33
-BOT_TOKEN=
+BOT_TOKEN=5634196555:AAEWcbLhho9M0HDBBKGyYa3JDaPaNBcDP2c
 MONGO_DB_URI=mongodb+srv://sanki:sanki@sankiworld.rdsc9pc.mongodb.net/?retryWrites=true&w=majority
 OWNER_ID=5612141503
 DURATION_LIMIT=1200
