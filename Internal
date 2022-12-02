@@ -1,6 +1,6 @@
 API_ID=4906250
 API_HASH=0ce8e2006b20d73d5582a894acf26b33
-BOT_TOKEN=5759761202:AAEAAlypGwpguCppTvzbZJl_6O0TgEd0LQU
+BOT_TOKEN=
 MONGO_DB_URI=mongodb+srv://sanki:sanki@sankiworld.rdsc9pc.mongodb.net/?retryWrites=true&w=majority
 OWNER_ID=5612141503
 DURATION_LIMIT=1200
@@ -10,3 +10,4 @@ STRING_SESSION=AQA5cAzsc2oNd0ttfoIAJBWW3a4k9qXtyKVEag7bxQRMXZgJEaXxyNT1IhDqClAbQ
 SUPPORT_CHANNEL=https://t.me/sanki_world
 SUPPORT_GROUP=https://t.me/DRE4M_M4TES
 START_IMG_URL=https://te.legra.ph/file/5723a42566e7da8b6e6c9.jpg
+UPSTREAM_REPO=https://github.com/XdityaHalder/AdityaPlayer
