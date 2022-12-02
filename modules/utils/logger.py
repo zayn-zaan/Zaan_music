@@ -12,7 +12,7 @@ async def play_logs(message, streamtype):
         else:
             chatusername = "Private Group"
         logger_text = f"""
-**𝗭𝗼𝘆𝗮 𝗣𝗹𝗮𝘆𝗲𝗿 𝗟𝗼𝗴𝘀**
+**𝐆𝐚𝐫𝐢𝐦𝐚 𝐑𝐨𝐛𝐨𝐭 𝐋𝐨𝐠𝐬 ...**
 
 **Chat:** {message.chat.title} [`{message.chat.id}`]
 **User:** {message.from_user.mention}
