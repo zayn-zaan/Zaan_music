@@ -1,16 +1,82 @@
 # Powered By @AdityaHalder
 
 import random
-from modules.config import SUPPORT_GROUP
+from modules import config
+from modules.config import SUPPORT_CHANNEL, SUPPORT_GROUP
 from pyrogram.types import InlineKeyboardButton
 
 
 
+def time_to_sec_new(time: str):
+    x = time.split(":")
+
+    if len(x) == 2:
+        min = int(x[0])
+        sec = int(x[1])
+
+        total_sec = (min*60) + sec
+    elif len(x) == 3:
+        hour = int(x[0])
+        min = int(x[1])
+        sec = int(x[2])
+
+        total_sec = (hour*60*60) + (min*60) + sec
+
+    return total_sec
+
 def stream_markup_timer(_, videoid, chat_id, played, dur):
+    played_sec = time_to_sec_new(played)
+    total_sec = time_to_sec_new(dur)
+
+    x, y = str(round(played_sec/total_sec,1)).split(".")
+    pos = int(y)
+
+    line = "═"
+    circle = "☉"
+
+    bar = line*(pos-1)
+    bar += circle
+    bar += line*(10-len(bar))
     buttons = [
         [
             InlineKeyboardButton(
-                        "💥 𝐉𝐨𝐢𝐧 𝐎𝐮𝐫 𝐂𝐡𝐚𝐭 𝐆𝐫𝐨𝐮𝐩 💞", url=f"{SUPPORT_GROUP}"
+                text=f"{played} {bar} {dur}",
+                callback_data="GetTimer",
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="▷",
+                callback_data=f"ADMIN Pause|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="ɪɪ",
+                callback_data=f"ADMIN Resume|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="✮",
+                callback_data=f"add_playlist {videoid}",
+            ),
+            InlineKeyboardButton(
+                text="‣‣",
+                callback_data=f"ADMIN Skip|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="▢",
+                callback_data=f"ADMIN Stop|{chat_id}",
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="✭ ᴜᴘᴅᴀᴛᴇs ✭", url=config.SUPPORT_CHANNEL
+            ),
+            InlineKeyboardButton(
+                text="✭ sᴜᴘᴘᴏʀᴛ ✭", url=config.SUPPORT_GROUP
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="✯ ᴄʟᴏsᴇ ✯", callback_data="close"
             )
         ],
     ]
@@ -18,10 +84,54 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
 
 
 def telegram_markup_timer(_, chat_id, played, dur):
+    played_sec = time_to_sec_new(played)
+    total_sec = time_to_sec_new(dur)
+
+    x, y = str(round(played_sec/total_sec,1)).split(".")
+    pos = int(y)
+
+    line = "═"
+    circle = "☉"
+
+    bar = line*(pos-1)
+    bar += circle
+    bar += line*(10-len(bar))
     buttons = [
         [
             InlineKeyboardButton(
-                        "💥 𝐉𝐨𝐢𝐧 𝐎𝐮𝐫 𝐂𝐡𝐚𝐭 𝐆𝐫𝐨𝐮𝐩 💞", url=f"{SUPPORT_GROUP}"
+                text=f"{played} {bar} {dur}",
+                callback_data="GetTimer",
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="▷",
+                callback_data=f"ADMIN Pause|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="ɪɪ",
+                callback_data=f"ADMIN Resume|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="‣‣",
+                callback_data=f"ADMIN Skip|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="▢",
+                callback_data=f"ADMIN Stop|{chat_id}",
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="✭ ᴜᴘᴅᴀᴛᴇs ✭", url=config.SUPPORT_CHANNEL
+            ),
+            InlineKeyboardButton(
+                text="✭ sᴜᴘᴘᴏʀᴛ ✭", url=config.SUPPORT_GROUP
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="✯ ᴄʟᴏsᴇ ✯", callback_data="close"
             )
         ],
     ]
@@ -35,18 +145,81 @@ def stream_markup(_, videoid, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
-                        "💥 𝐉𝐨𝐢𝐧 𝐎𝐮𝐫 𝐂𝐡𝐚𝐭 𝐆𝐫𝐨𝐮𝐩 💞", url=f"{SUPPORT_GROUP}"
+                text="▷",
+                callback_data=f"ADMIN Pause|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="ɪɪ",
+                callback_data=f"ADMIN Resume|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="✮",
+                callback_data=f"add_playlist {videoid}",
+            ),
+            InlineKeyboardButton(
+                text="‣‣",
+                callback_data=f"ADMIN Skip|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="▢",
+                callback_data=f"ADMIN Stop|{chat_id}",
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="✭ ᴜᴘᴅᴀᴛᴇs ✭", url=config.SUPPORT_CHANNEL
+            ),
+            InlineKeyboardButton(
+                text="✭ sᴜᴘᴘᴏʀᴛ ✭", url=config.SUPPORT_GROUP
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="✯ ᴄʟᴏsᴇ ✯", callback_data="close"
             )
         ],
     ]
     return buttons
+            
 
 
 def telegram_markup(_, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
-                        "💥 𝐉𝐨𝐢𝐧 𝐎𝐮𝐫 𝐂𝐡𝐚𝐭 𝐆𝐫𝐨𝐮𝐩 💞", url=f"{SUPPORT_GROUP}"
+                text=f"{played} {bar} {dur}",
+                callback_data="GetTimer",
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="▷",
+                callback_data=f"ADMIN Pause|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="ɪɪ",
+                callback_data=f"ADMIN Resume|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="‣‣",
+                callback_data=f"ADMIN Skip|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="▢",
+                callback_data=f"ADMIN Stop|{chat_id}",
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="✭ ᴜᴘᴅᴀᴛᴇs ✭", url=config.SUPPORT_CHANNEL
+            ),
+            InlineKeyboardButton(
+                text="✭ sᴜᴘᴘᴏʀᴛ ✭", url=config.SUPPORT_GROUP
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="✯ ᴄʟᴏsᴇ ✯", callback_data="close"
             )
         ],
     ]
