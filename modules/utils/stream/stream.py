@@ -20,7 +20,7 @@ from modules.utils.inline.play import (stream_markup,
 from modules.utils.inline.playlist import close_markup
 from modules.utils.pastebin import Adityabin
 from modules.utils.stream.queue import put_queue, put_queue_index
-from modules.utils.thumbnails import gen_thumb
+from modules.utils.thumbnails import gen_thumb, cre_thumb
 
 
 async def stream(
