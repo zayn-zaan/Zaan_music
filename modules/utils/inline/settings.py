@@ -17,18 +17,18 @@ def setting_markup(_):
         ],
         [
             InlineKeyboardButton(
-                text="🎩 𝐀𝐮𝐭𝐡 𝐔𝐬𝐞𝐫𝐬", callback_data="AU"
-            ),
-            InlineKeyboardButton(
-                text="🤖 𝐁𝐨𝐭 𝐎𝐰𝐧𝐞𝐫", url=f"https://t.me/adityahalder"
-            ),
-        ],
-        [
-            InlineKeyboardButton(
                 text="▶️ 𝐏𝐥𝐚𝐲 𝐌𝐨𝐝𝐞", callback_data="PM"
             ),
             InlineKeyboardButton(
                 text="🔥𝐂𝐥𝐞𝐚𝐧 𝐌𝐨𝐝𝐞", callback_data="CM"
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="🎩 𝐀𝐮𝐭𝐡 𝐔𝐬𝐞𝐫𝐬", callback_data="AU"
+            ),
+            InlineKeyboardButton(
+                text="🤖 𝐁𝐨𝐭 𝐎𝐰𝐧𝐞𝐫", url=f"https://t.me/h3xor"
             ),
         ],
         [
